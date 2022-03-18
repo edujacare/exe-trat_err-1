@@ -56,15 +56,16 @@ public class Account {
 	}
 	
 	public void withdraw(Double amount) {
+		validateWithdraw(amount);		
+		this.balance -= amount;
+	}
+	
+	public void validateWithdraw(Double amount ) {
 		if (amount > withDrawLimit) {
 			throw new BusinessException("Withdraw error: The aount exceeds withdraw limit");
 		}
 		if (amount > balance ) {
 			throw new BusinessException("Withdraw error: Not enough balance");
 		}
-				
-		this.balance -= amount;
 	}
-	
-	
 }
