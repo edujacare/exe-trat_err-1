@@ -62,7 +62,7 @@ public class Account {
 	
 	public void validateWithdraw(Double amount ) {
 		if (amount > withDrawLimit) {
-			throw new BusinessException("Withdraw error: The aount exceeds withdraw limit");
+			throw new BusinessException("Withdraw error: The amount exceeds withdraw limit");
 		}
 		if (amount > balance ) {
 			throw new BusinessException("Withdraw error: Not enough balance");
